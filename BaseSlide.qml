@@ -7,6 +7,10 @@ Rectangle {
     height: 768
     focus: true
 
+    function nextSlide() {
+        parent.nextSlide()
+    }
+
     function pushInStart() {
         var animation = Container.mainContainer.animation
         animation.page = baseSlide
@@ -35,13 +39,13 @@ Rectangle {
             animation.popOut.start()
     }
 
-    Keys.onSpacePressed: parent.nextSlide()
-    Keys.onRightPressed: parent.nextSlide()
+    Keys.onSpacePressed: baseSlide.nextSlide()
+    Keys.onRightPressed: baseSlide.nextSlide()
 
     Keys.onLeftPressed: parent.previousSlide()
 
     MouseArea {
         anchors.fill: parent
-        onClicked: baseSlide.parent.nextSlide()
+        onClicked: baseSlide.nextSlide()
     }
 }
