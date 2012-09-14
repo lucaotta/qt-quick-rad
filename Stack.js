@@ -5,7 +5,7 @@
 
 var stack = []
 
-var mainContainer
+var mainContainer = null
 
 var current_index = -1
 

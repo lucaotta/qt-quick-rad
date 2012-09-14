@@ -16,7 +16,6 @@ Rectangle {
     }
 
     function previousSlide() {
-        console.log("previous slide, currentSlide: " + privateProps.currentSlide)
         if (privateProps.currentSlide > 0) {
             Stack.popPage()
             privateProps.currentSlide --
