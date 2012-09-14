@@ -4,15 +4,21 @@ SlideTemplate {
 
     function nextSlide() {
         if (state === "")
-            state = "testo1"
-        else if (state === "testo1")
-            state = "testo2"
-        else if (state === "testo2")
-            state = "testo3"
-        else if (state === "testo3")
-            state = "testo4"
-        else
-            parent.nextSlide()
+            state = states[0].name
+        else {
+            // find current index
+            var idx
+            for (idx = 0; idx < states.length; ++idx) {
+                if (states[idx].name === state)
+                    break
+            }
+            idx ++
+            if (idx === states.length) {
+                parent.nextSlide()
+            }
+            else
+                state = states[idx].name
+        }
     }
 
     SemiboldText {
@@ -20,149 +26,149 @@ SlideTemplate {
         x: 175
         y: 81
         color: "#ed7e15"
-        text: qsTr("Limitazioni di Qt")
+        text: qsTr("Cosa è Qt")
         font.pointSize: 24
     }
 
     RegularText {
-        x: 147
-        y: 190
-        color: "#3f579f"
-        text: "Quanto codice serve per...?"
-        font.pointSize: 18
-    }
-
-    RegularText {
         id: regulartext1
-        x: 197
-        y: 240
+        x: 147
+        y: -30
         color: "#3f579f"
-        text: "Cambiare lo stile di default"
+        text: "Framework cross platform per lo sviluppo di applicazioni"
         font.pointSize: 18
-        opacity: 0
+        Behavior on y {
+            NumberAnimation { duration: 500; easing.type: Easing.InOutQuad }
+        }
     }
 
     RegularText {
         id: regulartext2
-        x: 197
-        y: 0
+        x: 147
+        y: -30
         color: "#3f579f"
-        text: "Cambiare il layout dinamicamente"
+        text: "Permette di creare GUI desktop e mobile"
         font.pointSize: 18
-        opacity: 0
+        Behavior on y {
+            NumberAnimation { duration: 500; easing.type: Easing.InOutQuad }
+        }
     }
 
     RegularText {
         id: regulartext3
-        x: 197
-        y: 340
+        x: 147
+        y: -30
         color: "#3f579f"
-        text: "Avere transizioni fluide tra pagine"
+        text: "Layer di portabilità tra piattaforme:"
         font.pointSize: 18
-        opacity: 0
+        Behavior on y {
+            NumberAnimation { duration: 500; easing.type: Easing.InOutQuad }
+        }
     }
 
-    RegularText {
-        id: regulartext4
-        x: 1025
-        y: 40
-        color: "#3f579f"
-        text: "Animare gli elementi della GUI"
-        visible: true
-        font.pointSize: 18
-        opacity: 0
+    Column {
+        id: column1
+        x: 175
+        y: -222
+        spacing: 20
+
+        RegularText {
+            x: 0
+            y: 0
+            color: "#3f579f"
+            text: "Thread e processi"
+            font.pointSize: 18
+        }
+
+        RegularText {
+            x: 0
+            y: 50
+            color: "#3f579f"
+            text: "Networking"
+            font.pointSize: 18
+        }
+
+        RegularText {
+            x: 0
+            y: 150
+            color: "#3f579f"
+            text: "Browser"
+            font.pointSize: 18
+        }
+
+        RegularText {
+            x: 0
+            y: 100
+            color: "#3f579f"
+            text: "Multimedia"
+            font.pointSize: 18
+        }
+        RegularText {
+            x: 0
+            y: 200
+            color: "#3f579f"
+            text: "OpenGL"
+            font.pointSize: 18
+        }
+
+        Behavior on y {
+            NumberAnimation { duration: 500; easing.type: Easing.InOutQuad }
+        }
     }
     states: [
         State {
-            name: "testo1"
+            name: "State1"
 
             PropertyChanges {
                 target: regulartext1
-                opacity: 1
+                y: 190
             }
         },
         State {
-            name: "testo2"
+            name: "State2"
             PropertyChanges {
                 target: regulartext1
-                opacity: "1"
+                y: 190
             }
-
             PropertyChanges {
                 target: regulartext2
-                opacity: 1
+                y: 240
+            }
+        },
+        State {
+            name: "State3"
+            PropertyChanges {
+                target: regulartext1
+                y: 190
+            }
+            PropertyChanges {
+                target: regulartext2
+                y: 240
+            }
+            PropertyChanges {
+                target: regulartext3
                 y: 290
             }
         },
         State {
-            name: "testo3"
+            name: "State4"
             PropertyChanges {
                 target: regulartext1
-                opacity: "1"
+                y: 190
             }
-
             PropertyChanges {
                 target: regulartext2
-                y: "290"
-                opacity: 1
+                y: 240
             }
-
             PropertyChanges {
                 target: regulartext3
-                opacity: 1
-                rotation: 360
+                y: 290
             }
-        },
-        State {
-            name: "testo4"
             PropertyChanges {
-                target: regulartext1
-                opacity: "1"
-            }
-
-            PropertyChanges {
-                target: regulartext2
-                y: "290"
-                opacity: 1
-            }
-
-            PropertyChanges {
-                target: regulartext3
-                rotation: "360"
-                opacity: 1
-            }
-
-            PropertyChanges {
-                target: regulartext4
-                opacity: 1
-                y: 390
-                x: 197
+                target: column1
+                x: 175
+                y: 340
             }
         }
     ]
-
-    transitions: [
-        Transition {
-            from: ""
-            to: "testo1"
-            NumberAnimation { target: regulartext1; property: "opacity"; duration: 500; easing.type: Easing.InOutQuad }
-        },
-        Transition {
-            from: "testo1"
-            to: "testo2"
-            NumberAnimation { target: regulartext2; property: "y"; duration: 400; easing.type: Easing.InOutQuad }
-        },
-        Transition {
-            from: "testo2"
-            to: "testo3"
-            NumberAnimation { target: regulartext3; property: "opacity"; duration: 400; easing.type: Easing.InOutQuad }
-            RotationAnimation { target: regulartext3; from: 0; duration: 1000; easing.type: Easing.OutElastic }
-        },
-        Transition {
-            from: "testo3"
-            to: "testo4"
-            NumberAnimation { target: regulartext4; properties: "x,y"; duration: 800; easing.type: Easing.OutBack }
-        }
-    ]
-
 }
