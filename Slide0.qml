@@ -7,13 +7,13 @@ Slide {
         y: 160
         color: "#ed7e15"
         text: qsTr("Luca Ottaviano")
-        font.pointSize: 18
+        font.pointSize: 24
     }
 
     SemiboldText {
         id: text2
         x: 429
-        y: 412
+        y: 372
         color: "#3f579f"
         text: qsTr("Qt Quick")
         font.pointSize: 24
