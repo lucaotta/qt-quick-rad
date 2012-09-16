@@ -5,10 +5,9 @@ Rectangle {
     id: baseSlide
     width: 1024
     height: 768
-    focus: true
 
     function nextSlide() {
-        parent.nextSlide()
+        Container.mainContainer.nextSlide()
     }
 
     function pushInStart() {
@@ -37,15 +36,5 @@ Rectangle {
         animation.page = baseSlide
         if (animation.popOut)
             animation.popOut.start()
-    }
-
-    Keys.onSpacePressed: baseSlide.nextSlide()
-    Keys.onRightPressed: baseSlide.nextSlide()
-
-    Keys.onLeftPressed: parent.previousSlide()
-
-    MouseArea {
-        anchors.fill: parent
-        onClicked: baseSlide.nextSlide()
     }
 }
