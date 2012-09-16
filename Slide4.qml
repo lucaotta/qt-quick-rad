@@ -2,14 +2,6 @@ import QtQuick 1.1
 
 SlideTemplate {
 
-    function nextSlide() {
-        if (state === "")
-            state = "state1"
-        else {
-            parent.nextSlide()
-        }
-    }
-
     SemiboldText {
         id: text2
         x: 19

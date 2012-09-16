@@ -2,25 +2,6 @@ import QtQuick 1.1
 
 SlideTemplate {
 
-    function nextSlide() {
-        if (state === "")
-            state = states[0].name
-        else {
-            // find current index
-            var idx
-            for (idx = 0; idx < states.length; ++idx) {
-                if (states[idx].name === state)
-                    break
-            }
-            idx ++
-            if (idx === states.length) {
-                parent.nextSlide()
-            }
-            else
-                state = states[idx].name
-        }
-    }
-
     SemiboldText {
         id: text2
         x: 175

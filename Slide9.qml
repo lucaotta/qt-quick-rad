@@ -2,14 +2,6 @@ import QtQuick 1.1
 import "DynamicObjects.js" as Script
 
 SlideTemplate {
-    id: thisSlide
-
-    function nextSlide() {
-        if (state === "")
-            state = "state1"
-        else
-            parent.nextSlide()
-    }
 
     SemiboldText {
         id: text2

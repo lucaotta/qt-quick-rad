@@ -61,7 +61,7 @@ Rectangle {
 
     MouseArea {
         anchors.fill: parent
-        onClicked: Stack.currentPage.nextSlide()
+        onClicked: Stack.currentPage().nextSlide()
     }
 
     Component.onCompleted: {

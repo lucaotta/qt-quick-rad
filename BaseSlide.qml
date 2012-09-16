@@ -7,7 +7,27 @@ Rectangle {
     height: 768
 
     function nextSlide() {
-        Container.mainContainer.nextSlide()
+        if (states.length === 0) {
+            Container.mainContainer.nextSlide()
+            return
+        }
+
+        if (state === "")
+            state = states[0].name
+        else {
+            // find current index
+            var idx
+            for (idx = 0; idx < states.length; ++idx) {
+                if (states[idx].name === state)
+                    break
+            }
+            idx ++
+            if (idx === states.length) {
+                Container.mainContainer.nextSlide()
+            }
+            else
+                state = states[idx].name
+        }
     }
 
     function pushInStart() {
