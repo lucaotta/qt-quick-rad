@@ -71,20 +71,27 @@ SlideTemplate {
         width: 80
         height: 73
         opacity: 0
+        font.family: "Monospace"
         text: "import QtQuick 1.1
 Rectangle {
 width: 100; height: 50
 x: 200; y: 300
 color: 'red'
 Behavior on x {
-NumberAnimation { duration: 200; easing.type: Easing.InOutQuad }
+NumberAnimation {
+    duration: 200;
+    easing.type: Easing.InOutQuad
+}
 }
 
 Behavior on y {
-NumberAnimation { duration: 400; easing.type: Easing.InOutQuad }
+    NumberAnimation {
+        duration: 400;
+        easing.type: Easing.InOutQuad
+    }
 }
 }"
-        font.pixelSize: 12
+        font.pixelSize: 16
 
         Rectangle {
             id: qmlError
@@ -103,7 +110,7 @@ NumberAnimation { duration: 400; easing.type: Easing.InOutQuad }
     Rectangle {
         id: rectangle1
         x: 43
-        y: 492
+        y: 550
         width: 200
         height: 200
         color: "#ffffff"
@@ -152,8 +159,8 @@ NumberAnimation { duration: 400; easing.type: Easing.InOutQuad }
 
             PropertyChanges {
                 target: text_edit1
-                width: 215
-                height: 347
+                width: 400
+                height: 400
                 opacity: 1
             }
 
