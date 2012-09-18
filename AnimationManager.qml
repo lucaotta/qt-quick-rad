@@ -8,12 +8,18 @@ Item {
     Loader {
         id: animationLoader
 
-        sourceComponent: slideAnimationComponent
+        sourceComponent: awayAnimationComponent
     }
 
     Component {
         id: slideAnimationComponent
         SlideAnimation {
+        }
+    }
+
+    Component {
+        id: awayAnimationComponent
+        AwayAnimation {
         }
     }
 

@@ -6,6 +6,7 @@ Rectangle {
     width: 1024
     height: 768
     focus: true
+    color: "black"
 
     property alias fontRegular: regular
     property alias fontSemibold: semibold
