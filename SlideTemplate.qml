@@ -1,7 +1,10 @@
 import QtQuick 1.1
+import "Stack.js" as Container
 
 BaseSlide {
     id: slideTemplate
+
+    property int slideNumber
 
     Rectangle {
         id: rectangle1
@@ -41,4 +44,18 @@ BaseSlide {
         color: "#a2a2a2"
         opacity: 0.400
     }
+
+    RegularText {
+        id: text2
+        x: 893
+        y: 4
+        color: "#666666"
+        text: qsTr("%1/26").arg(slideNumber)
+        font.pointSize: 14
+    }
+
+    // This needs to be an assignment since we want the number to be always the
+    // same, and not be updated when currentSlide changes (which has a nasty
+    // effect when used in combination with animations)
+    Component.onCompleted: slideNumber = Container.mainContainer.currentSlide
 }

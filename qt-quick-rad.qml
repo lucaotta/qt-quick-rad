@@ -11,22 +11,21 @@ Rectangle {
     property alias fontSemibold: semibold
     property alias animation: animationManager.animation
 
-    function nextSlide() {
-        if (Stack.openSlide(privateProps.currentSlide + 1) !== null)
-            privateProps.currentSlide ++
-    }
+    property int currentSlide: 0
+    property int lastSlide: 26
 
-    function previousSlide() {
-        if (privateProps.currentSlide > 0) {
-            Stack.popPage()
-            privateProps.currentSlide --
+    function nextSlide() {
+        if (currentSlide < lastSlide) {
+            ++ currentSlide
+            Stack.openSlide(currentSlide)
         }
     }
 
-    QtObject {
-        id: privateProps
-
-        property int currentSlide: 0
+    function previousSlide() {
+        if (currentSlide > 0) {
+            Stack.popPage()
+            currentSlide --
+        }
     }
 
     AnimationManager {
@@ -66,6 +65,6 @@ Rectangle {
 
     Component.onCompleted: {
         Stack.mainContainer = container
-        Stack.openSlide(privateProps.currentSlide)
+        Stack.openSlide(currentSlide)
     }
 }
