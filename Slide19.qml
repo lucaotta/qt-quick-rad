@@ -36,25 +36,7 @@ SlideTemplate {
         id: regularText4
         x: 147
         y: 900
-        text: " Spesso le performance sono migliori che con QWidget"
-    }
-
-    RegularText {
-        id: regularText5
-        x: 147
-        y: 900
-        text: " In Qt5:"
-    }
-
-    Image {
-        id: image1
-        x: 128
-        y: 900
-        width: 824
-        height: 212
-        fillMode: Image.PreserveAspectFit
-        source: "images/numbers.png"
-        smooth: true
+        text: " Spesso le performance sono migliori che con QWidget custom"
     }
 
     states: [
@@ -76,12 +58,6 @@ SlideTemplate {
             name: "state4"
             extend: "state3"
             PropertyChanges { target: regularText4; y: 340 }
-        },
-        State {
-            name: "state5"
-            extend: "state4"
-            PropertyChanges { target: regularText5; y: 390 }
-            PropertyChanges { target: image1; y: 468 }
         }
     ]
 
@@ -89,7 +65,7 @@ SlideTemplate {
         from: "*"
         to: "*"
         NumberAnimation {
-            targets: [regularText1, regularText2, regularText3, regularText4, regularText5, image1];
+            targets: [regularText1, regularText2, regularText3, regularText4];
             property: "y";
             duration: 600;
             easing.type: Easing.InOutSine

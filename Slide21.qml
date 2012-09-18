@@ -44,4 +44,10 @@ SlideTemplate {
         y: 390
         text: " Che non usi widget nativi"
     }
+
+    RegularText {
+        x: 147
+        y: 440
+        text: " Non ha senso per programmi professionali"
+    }
 }

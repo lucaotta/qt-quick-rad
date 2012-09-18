@@ -56,6 +56,16 @@ SlideTemplate {
         font.pointSize: 18
     }
 
+
+    RegularText {
+        id: regularText6
+        x: 1024
+        y: 440
+        color: "#3f579f"
+        text: " Richiede accelerazione hardware"
+        font.pointSize: 18
+    }
+
     states: [
         State {
             name: "state1"
@@ -80,6 +90,11 @@ SlideTemplate {
             name: "state5"
             extend: "state4"
             PropertyChanges { target: regularText5; x: 147 }
+        },
+        State {
+            name: "state6"
+            extend: "state5"
+            PropertyChanges { target: regularText6; x: 147 }
         }
     ]
 
@@ -87,7 +102,7 @@ SlideTemplate {
         from: "*"
         to: "*"
         NumberAnimation {
-            targets: [regularText1, regularText2, regularText3, regularText4, regularText5];
+            targets: [regularText1, regularText2, regularText3, regularText4, regularText5, regularText6];
             property: "x";
             duration: 600;
             easing.type: Easing.Linear
