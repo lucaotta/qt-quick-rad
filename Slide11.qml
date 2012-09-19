@@ -1,4 +1,5 @@
 import QtQuick 1.1
+import "Stack.js" as Container
 
 SlideTemplate {
 
@@ -30,4 +31,9 @@ SlideTemplate {
         text: "Applicazioni complesse a 60 FPS sono possibili"
         font.pointSize: 18
     }
+
+    // change animation type on the fly and set back the original animation
+    // when going back.
+    Component.onCompleted: Container.mainContainer.animationType = "away"
+    Component.onDestruction: Container.mainContainer.animationType = "slide"
 }

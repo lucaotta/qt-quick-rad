@@ -11,6 +11,7 @@ Rectangle {
     property alias fontRegular: regular
     property alias fontSemibold: semibold
     property alias animation: animationManager.animation
+    property alias animationType: animationManager.animationType
 
     property int currentSlide: 0
     property int lastSlide: 26

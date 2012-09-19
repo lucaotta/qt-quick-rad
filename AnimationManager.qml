@@ -4,11 +4,22 @@ import "Stack.js" as Stack
 Item {
     id: item
     property alias animation: animationLoader.item
+    property string animationType: "slide"
 
     Loader {
         id: animationLoader
 
-        sourceComponent: awayAnimationComponent
+        sourceComponent: {
+            switch (animationType) {
+            case "slide":
+                return slideAnimationComponent
+            case "away":
+                return awayAnimationComponent
+            default:
+                console.log("Warning: unknown animation type!")
+                return slideAnimationComponent
+            }
+        }
     }
 
     Component {
