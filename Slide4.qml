@@ -9,7 +9,18 @@ SlideTemplate {
         width: 488
         height: 38
         color: "#ed7e15"
-        text: qsTr("Ma il bene non dura mai... ecco a voi il designer!")
+        text: qsTr("Ma il bene non dura mai...")
+        font.pointSize: 24
+        wrapMode: Text.WordWrap
+    }
+    SemiboldText {
+        id: text3
+        x: 19
+        y: 770
+        width: 488
+        height: 38
+        color: "#ed7e15"
+        text: qsTr("ecco a voi il designer!")
         font.pointSize: 24
         wrapMode: Text.WordWrap
     }
@@ -50,6 +61,12 @@ SlideTemplate {
                 y: 661
                 opacity: 1
             }
+
+            PropertyChanges {
+                target: text3
+                x: 19
+                y: 151
+            }
         }
     ]
 
@@ -58,6 +75,7 @@ SlideTemplate {
             from: ""
             to: "state1"
             NumberAnimation { target: image1; property: "y"; duration: 1000; easing.type: Easing.Linear }
+            NumberAnimation { target: text3 ; property: "y"; duration: 1000; easing.type: Easing.Linear }
         }
     ]
 }
