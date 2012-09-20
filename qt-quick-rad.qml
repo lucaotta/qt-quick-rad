@@ -7,6 +7,7 @@ Rectangle {
     height: 768
     focus: true
     color: "black"
+    transform: Scale { origin.x: 0; origin.y: 0; xScale: mainWidth / 1024; yScale: mainHeight / 768 }
 
     property alias fontRegular: regular
     property alias fontSemibold: semibold
@@ -15,6 +16,10 @@ Rectangle {
 
     property int currentSlide: 0
     property int lastSlide: 26
+
+    property int mainWidth: 1024
+    property int mainHeight: 768
+
 
     function nextSlide() {
         if (currentSlide < lastSlide) {
