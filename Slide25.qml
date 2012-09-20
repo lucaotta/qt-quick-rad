@@ -33,7 +33,7 @@ SlideTemplate {
     RegularText {
         id: regularText2
         x: 147
-        y: 850
+        y: 340
         text: " Effetti particellari"
     }
 }
