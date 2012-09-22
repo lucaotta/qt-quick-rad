@@ -15,7 +15,7 @@ SlideTemplate {
         id: regularText1
         x: 147
         y: 190
-        text: " Tutte le funzionalità di Qt possono essere esposte da C++"
+        text: " Tutte le funzionalità di Qt possono essere esposte al QML"
     }
 
     RegularText {

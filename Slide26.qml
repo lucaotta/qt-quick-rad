@@ -1,71 +1,38 @@
 import QtQuick 1.1
 
-Slide {
+SlideTemplate {
+
     SemiboldText {
-        id: text1
-        x: 429
-        y: 160
+        id: text2
+        x: 175
+        y: 81
         color: "#ed7e15"
-        text: qsTr("Let's talk")
+        text: qsTr("Training")
         font.pointSize: 24
     }
 
-    SemiboldText {
-        id: text4
-        x: 400
-        y: 250
-        color: "#646464"
-        text: qsTr("office")
-        font.pointSize: 18
+    RegularText {
+        id: regularText1
+        x: 147
+        y: 200
+        width: 550
+        wrapMode: Text.WordWrap
+        text: "Qt Quick: GUI di nuova generazione per desktop e Raspberry Pi"
     }
-
 
     RegularText {
-        id: text2
-        x: 400
-        y: 290
-        text: qsTr("+39 055 3984627 (218)")
-    }
-
-    SemiboldText {
-        x: 400
+        x: 147
         y: 350
-        color: "#646464"
-        text: qsTr("e-mail")
-        font.pointSize: 18
+        text: "Ore 14, track \"Training\""
     }
 
-    RegularText {
-        x: 400
-        y: 390
-        text: qsTr("lottaviano@develer.com")
-    }
-
-    SemiboldText {
-        x: 400
-        y: 450
-        color: "#646464"
-        text: qsTr("web")
-        font.pointSize: 18
-    }
-
-    RegularText {
-        x: 400
-        y: 490
-        text: qsTr("www.develer.com")
-    }
-
-    SemiboldText {
-        x: 400
-        y: 550
-        color: "#646464"
-        text: qsTr("twitter")
-        font.pointSize: 18
-    }
-
-    RegularText {
-        x: 400
-        y: 590
-        text: qsTr("@lucaotta")
+    Image {
+        id: image1
+        x: 638
+        y: 286
+        width: 268
+        height: 272
+        fillMode: Image.PreserveAspectFit
+        source: "images/raspberry_pi.jpg"
     }
 }

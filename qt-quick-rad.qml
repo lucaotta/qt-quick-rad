@@ -15,7 +15,7 @@ Rectangle {
     property alias animationType: animationManager.animationType
 
     property int currentSlide: 0
-    property int lastSlide: 26
+    property int lastSlide: 27
 
     property int mainWidth: 1024
     property int mainHeight: 768

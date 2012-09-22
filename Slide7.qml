@@ -58,7 +58,7 @@ SlideTemplate {
 
         RegularText {
             color: "#3f579f"
-            text: "Un potete IDE cross platform (Qt Creator)"
+            text: "Un potente IDE cross platform (Qt Creator)"
             font.pointSize: 18
         }
     }
